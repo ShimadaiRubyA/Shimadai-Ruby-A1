@@ -12,11 +12,20 @@ enemies = []
   enemies << Enemy.new(rand(0..(640 - 32 - 1)), rand((480 - 32 - 1)), enemy_img)
 end
 
+i = 0
+
 Window.loop do
-  player.update
 
-  player.draw
-  Sprite.draw(enemies)
+  if( i % 30 == 0 )
+   Sprite.update(enemies)
+  end
+  
+    player.update
+    player.draw
+    Sprite.draw(enemies)
 
-  Sprite.check(player, enemies)
+    Sprite.check(player, enemies)
+
+    i += 1
+
 end
