@@ -16,7 +16,7 @@ i = 0
 
 Window.loop do
 
-  if( i % 30 == 0 )
+  if( i % 20 == 0 )
    Sprite.update(enemies)
   end
   
