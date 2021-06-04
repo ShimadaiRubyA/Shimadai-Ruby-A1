@@ -1,7 +1,7 @@
 class Player < Sprite
   def update
-    self.x += Input.x * 3
-    self.y += Input.y * 3
+    self.x += Input.x * 7
+    self.y += Input.y * 7
 
     if self.x <= 0
       self.x += 3

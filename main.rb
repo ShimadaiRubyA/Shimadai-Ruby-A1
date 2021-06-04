@@ -12,13 +12,13 @@ enemies = []
   enemies << Enemy.new(rand(0..(640 - 32 - 1)), rand((480 - 32 - 1)), enemy_img)
 end
 
-i = 0
+$i = 0
 
 Window.loop do
 
-  if( i % 20 == 0 )
+  #if( i % 10 == 0 )
    Sprite.update(enemies)
-  end
+  #end
   
     player.update
     player.draw
@@ -26,6 +26,6 @@ Window.loop do
 
     Sprite.check(player, enemies)
 
-    i += 1
+    $i += 1
 
 end

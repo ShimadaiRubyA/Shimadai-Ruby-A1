@@ -1,23 +1,31 @@
 class Enemy < Sprite
+  def initialize(x,y,img)
+    super(x,y,img)
+    @direction = 0
+  end
+
   def hit
     self.vanish
   end
 
   def update
-    
-    direction = rand(4)
-    speed = rand(20) * 5
+  
 
-    if direction == 0
+    if ( $i % 60 == 0 )
+    @direction = rand(4)
+    end
+    speed = rand(4)
+
+    if @direction == 0
       self.x += speed
 
-    elsif direction == 1
+    elsif @direction == 1
       self.x -= speed
 
-    elsif direction == 2
+    elsif @direction == 2
       self.y += speed
 
-    elsif direction == 3
+    elsif @direction == 3
       self.y -= speed
     end
 
