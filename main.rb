@@ -35,7 +35,7 @@ Window.loop do
 
     if !player.active # 以下追加
       if player.game_end
-        Window.draw_font(210, 190, "ゲームオーバー", font, {color: C_BLUE})
+        Window.draw_font(210, 190, "ゲームクリア", font, {color: C_BLUE})
       end
       Window.draw_font(120, 282, "スペースキー：ゲームスタート", font, {color: C_BLUE})
       Window.draw_font(181, 314, "ESCキー：ゲーム終了", font, {color: C_BLUE})
@@ -43,6 +43,9 @@ Window.loop do
         if player.game_end
           enemies.map {|enemy| enemy.vanish}
           Sprite.clean(enemies)
+          10.times do
+            enemies << Enemy.new(rand(0..(640 - 32 - 1)), rand((480 - 32 - 1)), enemy_img)
+          end
         end
         player.restart
       elsif Input.key_push?(K_ESCAPE)

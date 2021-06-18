@@ -10,7 +10,6 @@ class Enemy < Sprite
 
   def update
   
-
     if ( $i % 60 == 0 )
     @direction = rand(4)
     end
@@ -40,4 +39,5 @@ class Enemy < Sprite
     end
 
   end
+  
 end
