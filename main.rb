@@ -31,7 +31,7 @@ Window.loop do
 
     $i += 1
 
-    Window.draw_font(10, 10, "落ち物ゲーム　スコア：#{player.score}", font, {color: C_BLUE})
+    Window.draw_font(10, 10, "カツ丼　スコア：#{player.score}", font, {color: C_BLUE})
 
     if !player.active # 以下追加
       if player.game_end
